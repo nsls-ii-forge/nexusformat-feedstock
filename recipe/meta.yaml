@@ -1,0 +1,55 @@
+{% set name = "nexusformat" %}
+{% set version = "0.5.1" %}
+
+package:
+  name: "{{ name|lower }}"
+  version: "{{ version }}"
+
+source:
+  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
+  sha256: 7acc16a00cb4d2152c78c63629578a5ddec5674bcff733c52acac0a08f8d1646
+
+build:
+  number: 0
+  entry_points:
+    - nxstack=nexusformat.scripts.nxstack:main
+    - nxduplicate=nexusformat.scripts.nxduplicate:main
+    - nexusformat=nexusformat.scripts.nexusformat:main
+  noarch: "python"
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
+
+requirements:
+  host:
+    - pip
+    - python
+    - setuptools
+    - numpy
+  run:
+    - h5py
+    - ipython
+    - numpy
+    - python
+
+test:
+  imports:
+    - nexusformat
+    - nexusformat.nexus
+    - nexusformat.scripts
+  commands:
+    - nxstack --help
+    - nxduplicate --help
+    - nexusformat --help
+
+about:
+  home: "https://nexpy.github.io/nexpy/"
+  license: "BSD-3-Clause"
+  license_family: "BSD"
+  license_file: "COPYING"
+  summary: "nexusformat: Python API to access NeXus data"
+  doc_url: "https://nexpy.github.io/nexpy/"
+  dev_url: "https://github.com/nexpy/nexusformat"
+
+extra:
+  recipe-maintainers:
+    - tschoonj
+    - rayosborn
