@@ -48,8 +48,3 @@ about:
   summary: "nexusformat: Python API to access NeXus data"
   doc_url: "https://nexpy.github.io/nexpy/"
   dev_url: "https://github.com/nexpy/nexusformat"
-
-extra:
-  recipe-maintainers:
-    - tschoonj
-    - rayosborn
