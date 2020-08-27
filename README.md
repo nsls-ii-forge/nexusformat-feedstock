@@ -1,7 +1,7 @@
 About nexusformat
 =================
 
-Home: https://nexpy.github.io/nexpy/
+Home: https://nexpy.github.io/nexpy
 
 Package license: BSD-3-Clause
 

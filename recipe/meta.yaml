@@ -16,19 +16,18 @@ build:
     - nxduplicate=nexusformat.scripts.nxduplicate:main
     - nexusformat=nexusformat.scripts.nexusformat:main
   noarch: python
-  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
-    - pip
     - python
-    - setuptools
-    - numpy
+    - pip
   run:
+    - python
     - h5py
     - ipython
     - numpy
-    - python
+    - scipy
 
 test:
   imports:
@@ -41,10 +40,10 @@ test:
     - nexusformat --help
 
 about:
-  home: https://nexpy.github.io/nexpy/
+  home: https://nexpy.github.io/nexpy
   license: BSD-3-Clause
   license_family: BSD
   license_file: COPYING
   summary: 'nexusformat: Python API to access NeXus data'
-  doc_url: https://nexpy.github.io/nexpy/
+  doc_url: https://nexpy.github.io/nexpy
   dev_url: https://github.com/nexpy/nexusformat
