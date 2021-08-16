@@ -40,6 +40,7 @@ Installing `nexusformat` from the `nsls2forge` channel can be achieved by adding
 
 ```
 conda config --add channels nsls2forge
+conda config --set channel_priority strict
 ```
 
 Once the `nsls2forge` channel has been enabled, `nexusformat` can be installed with:
